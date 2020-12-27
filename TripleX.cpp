@@ -6,7 +6,7 @@ int main()
     std::cout << "You are an alien escaping Area 51.";
     // Add new line
     std::cout << std::endl;
-    std::cout << "You need to enter the correct code to reach your ship..." << std::endl;
+    std::cout << "You need to enter the correct code to reach your ship...\n\n";
 
     // Declare 3 different number codes
     const int CodeA = 4;
@@ -17,27 +17,26 @@ int main()
     const int CodeProduct = CodeA * CodeB * CodeC;
 
     // Print CodeSem and CodeProduct to the terminal
-    std::cout << std::endl;
-    std::cout << "+ The code is made up of 3 numbers." << std::endl;
-    std::cout << "+ The numbers in the code add up to: " << CodeSum << std::endl;
-    std::cout << "+ The 3 numbers multiply to give: " << CodeProduct << std::endl;
+    std::cout << "+ The code is made up of 3 numbers.";
+    std::cout << "\n+ The numbers in the code add up to: " << CodeSum;
+    std::cout << "\n+ The 3 numbers multiply to give: " << CodeProduct << std::endl;
 
+    // Store player guess
     int GuessA, GuessB, GuessC;
-    std::cin >> GuessA;
-    std::cin >> GuessB;
-    std::cin >> GuessC;
+    std::cin >> GuessA >> GuessB >> GuessC;
 
     int GuessSum = GuessA + GuessB + GuessC;
     int GuessProduct = GuessA * GuessB * GuessC;
 
+    // Check if player guess is correct
     if(GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
-        std::cout << "GREEN LIGHT. You've escaped. Well Done!! ";
+        std::cout << "\nCORRECT CODE. You've escaped. Well Done!! ";
 
     }
     else
     {
-        std::cout << "INCORRECT CODE. Try Again."
+        std::cout << "\nINCORRECT CODE. Try Again.";
     }
     
 
