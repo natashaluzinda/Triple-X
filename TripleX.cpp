@@ -3,6 +3,7 @@
 int main()
 {
     std::cout << "You are an alien escaping Area 51.";
-    std::cout << "You need to enter the correct codes to continue.."
+    std::cout << std::endl;
+    std::cout << "You need to enter the correct codes to reach your ship..";
     return 0;
 }
