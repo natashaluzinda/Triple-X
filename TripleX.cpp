@@ -1,12 +1,15 @@
 #include <iostream>
 
-int main()
+void PrintIntroduction()
 {
     // Print welcome messages to the terminal
-    std::cout << "You are an alien escaping Area 51.";
-    // Add new line
-    std::cout << std::endl;
+    std::cout << "You are an alien escaping Area 51.\n";
     std::cout << "You need to enter the correct code to reach your ship...\n\n";
+}
+
+void PlayGame()
+{
+    PrintIntroduction();
 
     // Declare 3 different number codes
     const int CodeA = 4;
@@ -16,7 +19,7 @@ int main()
     const int CodeSum = CodeA + CodeB + CodeC;
     const int CodeProduct = CodeA * CodeB * CodeC;
 
-    // Print CodeSem and CodeProduct to the terminal
+    // Print CodeSum and CodeProduct to the terminal
     std::cout << "+ The code is made up of 3 numbers.";
     std::cout << "\n+ The numbers in the code add up to: " << CodeSum;
     std::cout << "\n+ The 3 numbers multiply to give: " << CodeProduct << std::endl;
@@ -32,13 +35,15 @@ int main()
     if(GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
         std::cout << "\nCORRECT CODE. You've escaped. Well Done!! ";
-
     }
     else
     {
         std::cout << "\nINCORRECT CODE. Try Again.";
     }
-    
+}
 
+int main()
+{
+    PlayGame();
     return 0;
 }
