@@ -1,15 +1,15 @@
 #include <iostream>
 
-void PrintIntroduction()
+void PrintIntroduction(int Difficulty)
 {
     // Print welcome messages to the terminal
-    std::cout << "You are an alien escaping Area 51.\n";
-    std::cout << "You need to enter the correct code to reach your ship...\n\n";
+    std::cout << "\nYou're an alien escaping Level " << Difficulty;
+    std::cout << " of Area 51. \nYou need to enter the correct code to reach your ship...\n\n";
 }
 
-void PlayGame()
+bool PlayGame(int Difficulty)
 {
-    PrintIntroduction();
+    PrintIntroduction(Difficulty);
 
     // Declare 3 different number codes
     const int CodeA = 4;
@@ -34,16 +34,31 @@ void PlayGame()
     // Check if player guess is correct
     if(GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
-        std::cout << "\nCORRECT CODE. You've escaped. Well Done!! ";
+        std::cout << "\nCORRECT CODE. You've escaped. Well Done!!\n";
+        return true;
     }
     else
     {
         std::cout << "\nINCORRECT CODE. Try Again.";
+        return false;
     }
 }
 
 int main()
 {
-    PlayGame();
+    int LevelDifficulty = 1;
+    while(true)
+    {
+        bool bLevelComplete = PlayGame(LevelDifficulty);
+        std::cin.clear(); // Clears any errors
+        std::cin.ignore(); // Disgards the buffer
+
+        if (bLevelComplete)
+        {
+            // Increase level difficulty
+            ++LevelDifficulty;
+        }
+        
+    }
     return 0;
 }
